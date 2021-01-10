@@ -1,15 +1,22 @@
-html, body {
-    height: 100%;
+* {
+    box-sizing: border-box;
 }
-
 html {
     display: table;
     margin: auto;
 }
-
 body {
-    display: table-cell;
-    vertical-align: middle;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    transition: background 0.2s linear;
+}
+body.dark {
+    background-color: #292C35;
+    color: #fff;
 }
 h1 {
     max-width: 500;
@@ -22,9 +29,49 @@ ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    
 }
 li {
     float: left;
     padding: 8px;
     
+}
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+.checkbox:checked + .label .ball {
+    transform: translateX(26px);
+}
+.label {
+    background-color: #111;
+    display: flex;
+    border-radius: 50px;
+    width: 50px;
+    height: 25px;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+}
+.ball{
+    width: 20px;
+    height: 21px;
+    background-color: #fff;
+    top: 2px;
+    left: 2px;
+    border-radius: 50%;
+    position: absolute;
+    transition: transform 0.2s linear;
+}
+.fa-moon {
+    color: #f1c40f;
+}
+.fa-sun {
+    color: #f39c12;
+}
+.topright {
+    position: absolute;
+    top: 8px;
+    right:16px;
 }
